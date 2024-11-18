@@ -1,0 +1,31 @@
+B-Trees and B+ Trees are types of self-balancing tree data structures that maintain sorted data and allow for efficient insertion, deletion, 
+and search operations. They are commonly used in databases and file systems.
+
+B-Trees
+Structure: A B-Tree is a generalized binary search tree where a node can have more than two children.
+
+Properties:
+
+Each node can contain multiple keys.
+Each node (except root) must have at least ⌈m/2⌉ children and at most m children, where m is the order of the tree.
+All leaf nodes are at the same level.
+The keys within a node are sorted, and keys act as separation values to divide the subtrees.
+
+Operations:
+
+Search: Similar to binary search within nodes, and then recursively in child nodes.
+Insert: Find the appropriate leaf node to insert the key. If the leaf node is full, split it and propagate the middle key upwards.
+Delete: Remove the key and restructure the tree to maintain balance by borrowing or merging nodes.
+B+ Trees
+Structure: A B+ Tree is an extension of a B-Tree, where all values are at the leaf level and internal nodes only store keys.
+
+Properties:
+
+Internal nodes contain only keys to guide the search.
+Leaf nodes contain the actual values and pointers to the next leaf node, forming a linked list.
+All leaf nodes are at the same level.
+
+B+ Trees maintain a higher fan-out (more keys per node), leading to a more shallow tree and thus faster search operations.
+Operations:
+
+Search: Similar to B-Tree, but always ends at a leaf node, where actual values are found.

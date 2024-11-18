@@ -1,0 +1,26 @@
+A Minimum Spanning Tree (MST) of a weighted, connected, and undirected graph is a spanning tree with the minimum possible total edge weight.
+
+ A spanning tree is a subgraph that includes all the vertices of the original graph connected with the minimal number of edges.
+
+Kruskal's Algorithm
+Kruskal's Algorithm is a greedy algorithm to find the MST. It sorts all the edges in non-decreasing order of their weights and then includes 
+the smallest edge if it doesn't form a cycle with the edges that are already included.
+
+Steps:
+1.Sort all edges in non-decreasing order of their weights.
+2.Initialize an empty forest (a set of trees), where each vertex is a separate tree.
+3.For each edge in the sorted list:
+    If the edge connects two different trees, add it to the MST and merge the trees.
+4.Stop when there are V−1 edges in the MST (where V is the number of vertices).
+
+
+Prim's Algorithm
+Prim's Algorithm is another greedy algorithm that builds the MST by starting from an arbitrary vertex and growing the MST one edge at a time, always choosing the smallest edge that connects a vertex in the MST to a vertex outside it.
+
+Steps:
+1.Initialize a set to keep track of vertices included in the MST.
+2.Start from an arbitrary vertex and add it to the MST set.
+3.While there are vertices not yet included in the MST:
+    Select the smallest edge connecting a vertex in the MST set to a vertex outside the MST set.
+    Add the selected edge and the new vertex to the MST set.
+4.Repeat until all vertices are included in the MST.
